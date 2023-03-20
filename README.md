@@ -1,9 +1,9 @@
 # Galaxea Microbiome
 Repository of data and code for manuscript "<b>The bacterial microbiome of symbiotic and menthol-bleached polyps of *Galaxea fascicularis*</b>".
 
-Analysis of bacterial (16S) and Symbiodiniaecae (ITS2) community composition using Next Generation Sequencing (MiSeq Illumina).     
+Analysis of 🦠bacterial (16S) and 🟢Symbiodiniaecae (ITS2) community composition using Next Generation Sequencing (MiSeq Illumina).     
 Data analyzed in:
-- [Qiime2](https://docs.qiime2.org/2023.2/about/) (bacteria) raw sequencing data to feature table with assigned taxonomy, [see code here]()
+- [Qiime2](https://docs.qiime2.org/2023.2/about/) (bacteria) raw sequencing data to feature table with assigned taxonomy, [see code here](https://github.com/sPuntinG/Galaxea_Microbiome_PCI/blob/main/in/qiime2_analysis_code)
 - [SymPortal](https://symportal.org/) (Symbiodiniacaea) raw sequencing data to ITS2 sequence types
 - **R** (both) statistical testing and data visualization
 
