@@ -1,14 +1,25 @@
-# Galaxea_microbiome
-Repository of data and code for *Galaxea fascicularis* bacteria (16S) and Symbiodiniaceae (ITS) microbial data analysis to compare symbiotic and **menthol bleached** samples.
+# Galaxea Microbiome
+Repository of data and code for manuscript "<b>The bacterial microbiome of symbiotic and menthol-bleached polyps of *Galaxea fascicularis*</b>".
 
-Repo to be made public after manuscript submission.
+Analysis of bacterial (16S) and Symbiodiniaecae (ITS2) community composition using Next Generation Sequencing (MiSeq Illumina).     
+Data analyzed in:
+- [Qiime2](https://docs.qiime2.org/2023.2/about/) (bacteria) raw sequencing data to feature table with assigned taxonomy, [see code here]()
+- [SymPortal](https://symportal.org/) (Symbiodiniacaea) raw sequencing data to ITS2 sequence types
+- **R** (both) statistical testing and data visualization
 
-Preparing for Peer Community In submission :)
+
+To be submitted to bioRxiv > [Peer Community In](https://peercommunityin.org/) > [Peer Community Journal Microbiology](https://microbiol.peercommunityin.org/): 
+💎🔓📖 Diamond Open Access Journal!
 
 
 
+🚨 Repo to be made public with manuscript submission.
+
+
+
+
+----------------------------------------------
 ### Note for easy download
-To simply download the whole repo as it is (with its folder and subfolders etc) in *one go* click on: 
-**Code** > **Download ZIP**
-![image](https://user-images.githubusercontent.com/88721301/172871758-b875e82e-7c32-4b0d-9fa4-4ab4c1682b1e.png)
+To simply download the whole repo as it is (with its folder and subfolders etc) in one go click on: 
+`Code` > `Download ZIP`
 
