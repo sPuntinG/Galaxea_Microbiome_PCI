@@ -1,0 +1,234 @@
+# Qiime2 command used for Galaxea fasciculatis microbiome data analysis 
+
+# Qiime2 version 2021.11
+
+# Raw seq submitted to NCBI SRA XXXXXXXXX
+# Curated seqs in NCBI nucleotide collection YYYYYYY
+# R script and data (qiime2 output + metadata) for the rest of the analysis in (GitHub Zenodo ZZZZZZZZZZZZZZZZZZZZZ)
+
+# Note that I used JupyterHub notebook in a "headless environment" therefore some commands could not be run from the notebook, 
+# so I had to manully type them in the # terminal command line. These include for example: directly calling qiime2 (had to specify path), 
+# use of qiime2 tools view, and execution of bash commands such as # cd, rm, wget etc 
+# Therefore some steps are missing from this document, however the qiime2 commands, tools, inputs/outputs and parameters set are all reported here :)
+
+--------------------------------------------------------------
+# Directories used in this analysis:
+# $fp_projectdir = raw sequencing data
+# $fp_workdir = working directory (all processed data)
+# $fp_dada2 = output of DADA2
+# $fp_classifier = weighted taxonomic classifier (manually download from data.qiiime2.org and uploaded here)
+# $fp_forR = qiime2 outputs converted to R {phyloseq} compatible format (.tsv, .nwk)
+--------------------------------------------------------------
+
+# Import sequences
+  qiime tools import \
+  --type 'SampleData[PairedEndSequencesWithQuality]' \
+  --input-path $fp_projectdir \
+  --input-format CasavaOneEightSingleLanePerSampleDirFmt \
+  --output-path $fp_workdir/demux-paired-end.qza
+  
+  
+# Remove primers
+  qiime cutadapt trim-paired \
+  --i-demultiplexed-sequences $fp_workdir/demux-paired-end.qza \
+  --p-cores 3 \
+  --p-adapter-f 'ACACTGACGACATGGTTCTACAAGGATTAGATACCCTGGTA...GTCGTCAGCTCGTGYYGAGACCAAGTCTCTGCTACCGTA' \
+  --p-adapter-r 'TACGGTAGCAGAGACTTGGTCTCRRCACGAGCTGACGAC...TACCAGGGTATCTAATCCTTGTAGAACCATGTCGTCAGTGT' \
+  --p-discard-untrimmed True \
+  --o-trimmed-sequences $fp_workdir/demux-paired-end-trimmed.qza 
+
+
+# Visually check the quality of the sequences (after trimming off the primers) (https://view.qiime2.org)
+qiime demux summarize \
+--i-data $fp_workdir/demux-paired-end-trimmed.qza \
+--o-visualization $fp_workdir/demux-paired-end-trimmed.qzv
+
+
+# Denoise with DADA2
+qiime dada2 denoise-paired \
+--i-demultiplexed-seqs $fp_workdir/demux-paired-end-trimmed.qza \
+--p-trunc-len-f 232 \
+--p-trunc-len-r 234 \
+--output-dir $fp_workdir/DADA2_denoised_output 
+
+
+# DADA2 stats viz
+qiime metadata tabulate \
+--m-input-file $fp_workdir/DADA2_denoised_output/denoising_stats.qza \
+--o-visualization $fp_workdir/DADA2_denoised_output/denoising_stats.qzv
+
+
+# Create viz of representative sequences
+## FeatuerTable[Sequences]
+qiime feature-table tabulate-seqs \
+--i-data $fp_workdir/DADA2_denoised_output/representative_sequences.qza \
+--o-visualization $fp_workdir/DADA2_denoised_output/representative_sequences.qzv
+
+## FeatuerTable[Frequency]
+qiime feature-table summarize \
+--i-table $fp_workdir/DADA2_denoised_output/table.qza \
+--o-visualization $fp_workdir/DADA2_denoised_output/table.qzv
+
+
+# Add metadata
+qiime feature-table summarize \
+--i-table $fp_workdir/DADA2_denoised_output/table.qza \
+--m-sample-metadata-file $fp_workdir/metadata.tsv \
+--o-visualization $fp_workdir/table-wmeta.qzv
+
+
+# Generate a phylogenetic tree - SEPP fragment insertion
+## Download backbone tree (run this from terminal and then upload to Jupyter Lab manually)
+!wget -O "sepp-refs-SILVA-128.qza" "https://data.qiime2.org/2021.11/common/sepp-refs-silva-128.qza"
+
+## Create insertion tree
+qiime fragment-insertion sepp \
+--i-representative-sequences $fp_workdir/DADA2_denoised_output/representative_sequences.qza \
+--i-reference-database $fp_workdir/sepp-refs-silva-128.qza \
+--p-threads 3 \
+--o-tree $fp_workdir/insertion-tree.qza \
+--o-placements $fp_workdir/insertion-placements.qza
+
+## Filter feature table (retain only fragments that are in the insertion tree)
+qiime fragment-insertion filter-features \
+--i-table $fp_workdir/DADA2_denoised_output/table.qza \
+--i-tree $fp_workdir/insertion-tree.qza \
+--o-filtered-table $fp_workdir/tree-filtered-table.qza \
+--o-removed-table $fp_workdir/tree-removed-table.qza
+
+## Compare (in q2 View) filtered table with non-filtered table to see if any fragment was removed
+# (spoiler: none removed)
+qiime feature-table summarize \
+--i-table $fp_workdir/tree-filtered-table.qza \
+--m-sample-metadata-file $fp_workdir/metadata.tsv \
+--o-visualization $fp_workdir/tree-filtered-table.qzv
+
+qiime feature-table summarize \
+--i-table $fp_workdir/tree-removed-table.qza \
+--m-sample-metadata-file $fp_workdir/metadata.tsv \
+--o-visualization $fp_workdir/tree-removed-table.qzv
+
+
+# Taxonomic assignement with weighted classifier
+## Download classifier (run this from terminal and then upload to Jupyter Lab manually)
+!wget -P $fp_classifier "https://data.qiime2.org/2021.11/common/silva-138-99-nb-weighted-classifier.qza"
+
+## Assign taxonomy to representative sequences
+qiime feature-classifier classify-sklearn \
+--i-classifier $fp_classifier/silva-138-99-nb-weighted-classifier.qza \
+--i-reads $fp_dada2/representative_sequences.qza \
+--p-n-jobs 3 \
+--o-classification $fp_workdir/taxonomy-raw.qza
+
+## Create output table
+qiime metadata tabulate \
+--m-input-file $fp_workdir/taxonomy-raw.qza \
+--o-visualization $fp_workdir/taxonomy-raw.qzv
+
+## Create barplot viz
+qiime taxa barplot \
+--i-table $fp_dada2/table.qza \
+--i-taxonomy $fp_workdir/taxonomy-raw.qza \
+--m-metadata-file $fp_workdir/metadata.tsv \
+--o-visualization $fp_workdir/taxa-bar-plots.qzv
+
+
+# Remove non-bacterial sequences
+qiime taxa filter-table \
+--i-table $fp_workdir/tree-filtered-table.qza \
+--i-taxonomy $fp_workdir/taxonomy-raw.qza \
+--p-exclude mitochondria,chloroplast,unknown,Archaea,Eukaryota \
+--o-filtered-table $fp_workdir/table-filtered.qza
+
+## Visualize summary and plot of filtered table (removed non-bacterial taxa)
+qiime feature-table summarize \
+--i-table $fp_workdir/table-filtered.qza \
+--m-sample-metadata-file $fp_workdir/metadata.tsv \
+--o-visualization $fp_workdir/table-filtered.qzv
+
+qiime taxa barplot \
+--i-table $fp_workdir/table-filtered.qza \
+--i-taxonomy $fp_workdir/taxonomy-raw.qza \
+--m-metadata-file $fp_workdir/metadata.tsv \
+--o-visualization $fp_workdir/taxa-filtered-bar-plots.qzv
+
+
+# Export qiime2 output for downstream analysis in R
+## Transpose feature table
+qiime feature-table transpose \
+--i-table $fp_workdir/table-filtered.qza \
+--o-transposed-feature-table $fp_workdir/table-filtered-transposed.qza
+
+## Merge feature table with taxonomy table
+qiime metadata tabulate \
+--m-input-file $fp_dada2/representative_sequences.qza \
+--m-input-file $fp_workdir/taxonomy-raw.qza \
+--m-input-file $fp_workdir/table-filtered-transposed.qza \
+--o-visualization $fp_workdir/table-filtered-count-wtaxa.qzv
+
+## Convert (and download) table-filtered-count-wtaxa.qzv to .tsv through qiime2 View (online tool)
+## This produces `table-filtered-count_wtaxa.tsv`
+
+## Convert (and download) table-filtered.qzv (feature frequency table) to .csv through qiime2 View (online tool)
+## This produces `table-filtered_feature-freq.csv`
+
+
+# Identification of lab contamiants was done in R, see scripts 
+# "00_data_structuring.R", "01_find_contaminants.R", "02_remove_contaminants.R" in GitHub
+# So, 5 features (representative sequences) were identified as contaminants, 
+# their ASV id (OTU-id in q2) and sequences were saved as "contaminants_features_sequences.csv"
+# from which "features-to-filter.tsv" was created by keeping on the "Feature ID" column 
+# (to have format compatible with next qiime2 command)
+
+
+# Filter out identified contaminats (sequences) 
+qiime feature-table filter-features \
+--i-table $fp_workdir/table-filtered.qza \
+--m-metadata-file $fp_workdir/features-to-filter.tsv \
+--p-exclude-ids True \
+--o-filtered-table $fp_workdir/table-filtered-decont.qza
+
+qiime feature-table summarize \
+  --i-table $fp_workdir/table-filtered-decont.qza \
+  --o-visualization $fp_workdir/table-filtered-decont.qzv
+  
+  
+# Remove negative control (sample named "C1")
+! echo 'Sample ID\nC1-16S' | tr "," "\\t" > $fp_workdir/samples-to-filter.tsv
+
+qiime feature-table filter-samples \
+--i-table $fp_workdir/table-filtered-decont.qza \
+--m-metadata-file $fp_workdir/samples-to-filter.tsv \
+--p-exclude-ids True \
+--o-filtered-table $fp_workdir/table-filtered-decont-rmC1.qza
+
+qiime feature-table summarize \
+  --i-table $fp_workdir/table-filtered-decont-rmC1.qza \
+  --o-visualization $fp_workdir/table-filtered-decont-rmC1.qzv
+  
+  
+# Prepare data for R {phyloseq}: extract and convert
+## Extract from .qza
+qiime tools extract \
+--input-path $fp_forR/table-filtered-decont-rmC1.qza \
+--output-path $fp_forR/
+
+qiime tools extract \
+--input-path $fp_forR/taxonomy-raw.qza \
+--output-path $fp_forR/
+
+qiime tools extract \
+--input-path $fp_forR/insertion-tree.qza \
+--output-path $fp_forR/
+
+## Convert .biom to .tsv
+biom convert \
+-i $fp_forR/extracted_table/data/feature-table.biom \
+-o $fp_forR/feature-table.tsv --to-tsv
+  
+### Download these 3 files and import in R (see script XXXXXXXX)
+# Of note: for ease of typing the files were renamed as follows
+# table-filtered-decont-rmC1.qza -> table-filtered-decont-rmC1.tsv -> feature-table.tsv
+# taxonomy-raw.qza -> taxonomy-raw.tsv -> taxonomy.tsv
+# insertion-tree.qza -> tree.nwk
+

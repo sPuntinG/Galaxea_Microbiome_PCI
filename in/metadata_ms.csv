@@ -1,0 +1,30 @@
+sample_id,new_name,sample_type,origin,colony,state,origin_ms,colony_ms,state_colony_frgmt_ms,levels_colony_ms
+S-53-20-16S,S-53-20,sample,JLU,53,symbiotic,Red Sea,RS2,S_RS2_20,2
+B-53-11-16S,B-53-11,sample,JLU,53,bleached,Red Sea,RS2,B_RS2_11,2
+B-6-24-16S,B-6-24,sample,JLU,6,bleached,Red Sea,RS1,B_RS1_24,1
+B-6-7-16S,B-6-7,sample,JLU,6,bleached,Red Sea,RS1,B_RS1_7,1
+GREEN-SYM-6-16S,S-gr-6,sample,HKU,green,symbiotic,Hong Kong,HK2,S_HK2_6,6
+GREEN-SYM-4-16S,S-gr-4,sample,HKU,green,symbiotic,Hong Kong,HK2,S_HK2_4,6
+S-60-5-16S,S-60-5,sample,JLU,60,symbiotic,Red Sea,RS3,S_RS3_5,3
+BROWN-SYM-8-16S,S-br-8,sample,HKU,brown,symbiotic,Hong Kong,HK1,S_HK1_8,5
+B-60-14-16S,B-60-14,sample,JLU,60,bleached,Red Sea,RS3,B_RS3_14,3
+S-53-27-16S,S-53-27,sample,JLU,53,symbiotic,Red Sea,RS2,S_RS2_27,2
+BROWN-B1-2-16S,B-br-2,sample,HKU,brown,bleached,Hong Kong,HK1,B_HK1_2,5
+S-60-3-16S,S-60-3,sample,JLU,60,symbiotic,Red Sea,RS3,S_RS3_3,3
+B-6-16-16S,B-6-16,sample,JLU,6,bleached,Red Sea,RS1,B_RS1_16,1
+GREEN-SYM-7-16S,S-gr-7,sample,HKU,green,symbiotic,Hong Kong,HK2,S_HK2_7,6
+S-60-9-16S,S-60-9,sample,JLU,60,symbiotic,Red Sea,RS3,S_RS3_9,3
+S-53-17-16S,S-53-17,sample,JLU,53,symbiotic,Red Sea,RS2,S_RS2_17,2
+S-6-17-16S,S-6-17,sample,JLU,6,symbiotic,Red Sea,RS1,S_RS1_17,1
+BROWN-SYM-6-16S,S-br-6,sample,HKU,brown,symbiotic,Hong Kong,HK1,S_HK1_6,5
+S-6-30-16S,S-6-30,sample,JLU,6,symbiotic,Red Sea,RS1,S_RS1_30,1
+C1-16S,C1,control,control,control,control,control,control,Control,4
+BROWN-BI-1-16S,B-br-1,sample,HKU,brown,bleached,Hong Kong,HK1,B_HK1_1,5
+GREEN-BI-1-16S,B-gr-1,sample,HKU,green,bleached,Hong Kong,HK2,B_HK2_1,6
+B-53-43-16S,B-53-43,sample,JLU,53,bleached,Red Sea,RS2,B_RS2_43,2
+BROWN-BI-3-16S,B-br-3,sample,HKU,brown,bleached,Hong Kong,HK1,B_HK1_3,5
+B-60-15-16S,B-60-15,sample,JLU,60,bleached,Red Sea,RS3,B_RS3_15,3
+B-53-6-16S,B-53-6,sample,JLU,53,bleached,Red Sea,RS2,B_RS2_6,2
+GREEN-BI-2-16S,B-gr-2,sample,HKU,green,bleached,Hong Kong,HK2,B_HK2_2,6
+B-60-25-16S,B-60-25,sample,JLU,60,bleached,Red Sea,RS3,B_RS3_25,3
+S-6-31-16S,S-6-31,sample,JLU,6,symbiotic,Red Sea,RS1,S_RS1_31,1

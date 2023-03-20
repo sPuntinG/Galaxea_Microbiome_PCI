@@ -1,0 +1,2 @@
+consider moving all contents of "useful_tables" to "supplementary"
+(and maybe call it "misc_pox_supplementary" or "additional_info_summary")

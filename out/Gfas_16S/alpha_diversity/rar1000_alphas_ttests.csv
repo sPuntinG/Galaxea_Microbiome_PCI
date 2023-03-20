@@ -1,0 +1,7 @@
+div_metric,test,variance,group1,group2,n1,n2,statistic,df,p
+Observed,unpaired 2-samples t-test,equal,bleached,symbiotic,14,13,1.4174571612310463,25,0.0843
+Shannon,unpaired 2-samples t-test,equal,bleached,symbiotic,14,13,1.58202430994403,25,0.0631
+Simpson,Welch t-test,unequal,bleached,symbiotic,14,13,1.4528201665811395,18.37024654993371,0.0816
+Faith_PD,unpaired 2-samples t-test,equal,bleached,symbiotic,14,13,1.4466457354024844,25,0.16
+pielou,unpaired 2-samples t-test,equal,bleached,symbiotic,14,13,1.4449602323321555,25,0.0804
+Chao1,unpaired 2-samples t-test,equal,bleached,symbiotic,14,13,1.3964470000555822,25,0.0874

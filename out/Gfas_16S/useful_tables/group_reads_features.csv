@@ -1,0 +1,12 @@
+state,colony_ms,nr_reads,nr_features,n
+symbiotic,HK1,8584,88,2
+symbiotic,HK2,14631,103,3
+symbiotic,RS1,11682,19,3
+symbiotic,RS2,13417,119,3
+symbiotic,RS3,7362,77,3
+control,control,2113,22,1
+bleached,HK1,13231,128,3
+bleached,HK2,8086,57,2
+bleached,RS1,13126,123,3
+bleached,RS2,11878,71,3
+bleached,RS3,10792,131,3

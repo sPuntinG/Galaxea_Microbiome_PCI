@@ -1,0 +1,4 @@
+div_metric,test,group1,group2,n1,n2,statistic,p
+Shannon, Mann-Whitney U-test,bleached,symbiotic,14,13,113,0.151
+Simpson, Mann-Whitney U-test,bleached,symbiotic,14,13,123,0.0639
+pielou, Mann-Whitney U-test,bleached,symbiotic,14,13,117,0.22
