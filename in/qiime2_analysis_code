@@ -2,8 +2,8 @@
 
 # Qiime2 version 2021.11
 
-# Raw seq submitted to NCBI SRA XXXXXXXXX
-# Curated seqs in NCBI nucleotide collection YYYYYYY
+# Raw sequencing data submitted to NCBI SRA XXXXXXXXX
+# Representative sequences (ASVs) submitted to NCBI GenBank YYYYYYY
 # R script and data (qiime2 output + metadata) for the rest of the analysis in (GitHub Zenodo ZZZZZZZZZZZZZZZZZZZZZ)
 
 # Note that I used JupyterHub notebook in a "headless environment" therefore some commands could not be run from the notebook, 

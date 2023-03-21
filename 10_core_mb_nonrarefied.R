@@ -82,6 +82,7 @@ ASV_occurrence_overall <- ASV_occurrence_overall %>%
   ) %>%
   relocate(order_byabund, .after = perc_of_samples)
 
+
 ## Create easier names for ASV based on their abundance (ASV_001 = most abundant) --------
 # Make table to reference ASV original id (32 chr from q2) to a numbered name
 # as 'ASV_n', where n = the ranking of that ASV by overall abundance (across whole data set)
@@ -97,6 +98,9 @@ ASV_numbered <- ASV_occurrence_overall %>%
 ASV_numbers <- ASV_numbered %>% select(ASV, ASV_nr)
 
 write_csv(ASV_numbers, "./out/Gfas_16S/core_mb/nonrarefied/ASV_numbers.csv")
+
+# For GenBank ------------------------------
+write_csv(ASV_numbered, "./out/Gfas_16S/useful_tables/ASV_numbered_forGenBank.csv") 
 
 
 ## Calculate % and abundance by symbiotic state - SYMBIOTIC -----------------------
