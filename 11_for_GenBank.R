@@ -36,14 +36,27 @@ genbank <- lowest_taxlevel %>%
   select(ASV_nr, Sequence) %>% view()
 
 
+# Remove sequences flagged by NCBI during submission
+toexclude <- read_csv("out/Gfas_16S/useful_tables/toexclude.txt", col_names = FALSE) %>% 
+  rename(ASV_nr = X1)
+
+
+genbank_filtered <- anti_join(genbank, toexclude)
+
+# 515 - 457 = 58
+
+toexclude$ASV_nr %>% n_distinct() # 58
+
+
 # Make a fasta file (.txt) in tidyverse ---------------------------------
 # (faster than figureing out other packages)
 
-genbank %>% 
+# genbank %>%
+genbank_filtered %>% 
   mutate(forfasta = paste0(">", ASV_nr, "\n", Sequence, "\n\n")) %>% 
   # view() 
   # select(forfasta) %>% 
   pull(forfasta) %>% 
   str_flatten() %>% 
-  write_file(., "./out/Gfas_16S/useful_tables/forGenBank_Gfas16S.txt")
+  write_file(., "./out/Gfas_16S/useful_tables/forGenBank_Gfas16S_2.txt")
 

@@ -7,9 +7,10 @@
 # R script and data (qiime2 output + metadata) for the rest of the analysis in (GitHub Zenodo ZZZZZZZZZZZZZZZZZZZZZ)
 
 # Note that I used JupyterHub notebook in a "headless environment" therefore some commands could not be run from the notebook, 
-# so I had to manully type them in the # terminal command line. These include for example: directly calling qiime2 (had to specify path), 
+# so I had to manully type them in the terminal command line. These include for example: directly calling qiime2 (had to specify path), 
 # use of qiime2 tools view, and execution of bash commands such as # cd, rm, wget etc 
-# Therefore some steps are missing from this document, however the qiime2 commands, tools, inputs/outputs and parameters set are all reported here :)
+# Therefore some steps are missing from this document, however the qiime2 commands, tools, inputs/outputs and parameters set are
+# all reported here :)
 
 --------------------------------------------------------------
 # Directories used in this analysis:
