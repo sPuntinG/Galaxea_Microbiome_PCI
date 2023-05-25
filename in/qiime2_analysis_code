@@ -2,9 +2,9 @@
 
 # Qiime2 version 2021.11
 
-# Raw sequencing data submitted to NCBI SRA XXXXXXXXX
-# Representative sequences (ASVs) submitted to NCBI GenBank YYYYYYY
-# R script and data (qiime2 output + metadata) for the rest of the analysis in (GitHub Zenodo ZZZZZZZZZZZZZZZZZZZZZ)
+# Raw sequencing data submitted to NCBI SRA BioProject PRJNA947274
+# Representative sequences (ASVs) submitted to NCBI GenBank Accession numbers OQ677536 to OQ677992
+# R script and data (qiime2 output + metadata) for the rest of the analysis in (GitHub-Zenodo)
 
 # Note that I used JupyterHub notebook in a "headless environment" therefore some commands could not be run from the notebook, 
 # so I had to manully type them in the terminal command line. These include for example: directly calling qiime2 (had to specify path), 
