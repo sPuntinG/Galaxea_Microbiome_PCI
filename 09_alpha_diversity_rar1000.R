@@ -355,7 +355,10 @@ ggsave("./out/Gfas_16S/alpha_diversity/rarefied1000_alphas_bystateCI95.png",
        units = "cm", width = 30, height = 13)
 
 
-
+ggsave("./out/Gfas_16S/alpha_diversity/rarefied1000_alphas_bystateCI95.svg", 
+       bg = "white",
+       # dpi = 330,
+       units = "cm", width = 30, height = 13)
 
 
 
