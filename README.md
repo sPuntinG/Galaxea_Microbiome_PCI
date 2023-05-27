@@ -11,6 +11,10 @@ Data analyzed in:
 To be submitted to bioRxiv > [Peer Community In](https://peercommunityin.org/) > [Peer Community Journal Microbiology](https://microbiol.peercommunityin.org/): 
 💎🔓📖 Diamond Open Access Journal!
 
+## Want to cite my code?
+Use this DOI for the latest released version of this repository:    
+[![DOI](https://zenodo.org/badge/616299870.svg)](https://zenodo.org/badge/latestdoi/616299870)
+
 
 ----------------------------------------------
 ### Note: for easy ⬇️ download
