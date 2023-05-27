@@ -1,4 +1,4 @@
-# Galaxea Microbiome
+# *Galaxea fascicularis* Microbiome
 Repository of data and code for manuscript "<b>The bacterial microbiome of symbiotic and menthol-bleached polyps of *Galaxea fascicularis*</b>".
 
 Analysis of 🦠bacterial (16S) and 🟢Symbiodiniaecae (ITS2) community composition using Next Generation Sequencing (MiSeq Illumina).     
