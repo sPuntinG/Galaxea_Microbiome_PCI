@@ -8,7 +8,7 @@
 #  in case other fellas would be interested in ggplot tricks
 #  for multi-panel plots :)
 #
-# Use rarefied x 1000 data!
+# Used rarefied x 1000 data!
 # 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

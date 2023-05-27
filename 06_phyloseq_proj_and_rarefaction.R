@@ -286,8 +286,8 @@ ps_rarefied.1000avg_HongKong <- readRDS("./out/RDS_files/ps_rarefied.1000avg_Hon
 # because rarecurve plots in base r is ugly ...
 
 # For the supplementary, to see if we reach saturation 
-# (curves reach asymptotic-like shape or still steep? YES)
-# and compare before and after rarefaction
+# (do curves plateau? YES)
+
 
 
 ## Rarefaction curve - NON-rarefied data -------------------

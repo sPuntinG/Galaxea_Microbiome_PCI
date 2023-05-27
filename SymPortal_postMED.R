@@ -3,8 +3,6 @@
 
 # Data downloaded from here: https://symportal.org/data_explorer/
 # should become publicly available in a year from date of data submission
-# (21.01.2022 -> 21.01.2023)
-
 
 library(tidyverse)
 library(here)
@@ -299,48 +297,7 @@ toplot <- data_symb_top %>%
   mutate(order = row_number()) %>% 
   mutate(order2 = ifelse(str_detect(ITS_seq_type, "Cladocopium"), order + 100, order)) %>% # 100 is just a big number
   view()
-  
-# ggplot(toplot, 
-#        aes(x = sample_name, y = rel_abund, # rel_abund,
-#            fill = forcats::fct_reorder(ITS_seq_type, -order2) # rel_abund
-#            )) +
-#   geom_col(color = "#000000", width = 1) + 
-#   geom_text(aes(label = label, y = 0.13), 
-#             angle = 90,
-#             hjust = "right",
-#             size = 3
-#             ) +
-#   scale_y_continuous(expand = c(0, 0)) +
-#   scale_fill_manual(values = palette12,
-#                     breaks = c("C1", "C1c",  
-#                                "D1" ,"C1b", "C41f", "C41", "D4", "A1", "C39", 
-#                                "other *Durusdinium*", "other *Symbiodinium*",
-#                                "other *Cladocopium*")) + #, 
-#                     # guide = guide_legend(reverse = F)) +
-#   labs(y = "Relative abundance",
-#        fill = "ITS2 sequences") +
-#   theme_classic() +
-#   theme(
-#     axis.title.x = element_blank(),
-#     axis.text.x = element_text(size = 8, angle = 45, hjust = 1),
-#     axis.title.y = element_text(margin = margin(r = 9)),
-#     legend.key.size = unit(0.4, 'cm'), #change legend key size
-#     legend.title = element_text(size = 9), #change legend title font size
-#     legend.text = ggtext::element_markdown(size = 8),
-#     axis.ticks.x = element_blank(),
-#     strip.background = element_rect(fill = NA, color = NA),
-#     strip.text.x = element_text(face = "bold"),
-#     strip.placement = "outside"
-#   ) +
-#   facet_grid(~colony, 
-#              scales = "free", space = "free_x"#, switch = "x"
-#   )
-# 
-# 
-# ggsave("./out/Gfas_ITS_SymPortal/rel_abund_clade_top5perc_faceted.png", 
-#        bg = "111111",
-#        dpi = 330,
-#        units = "cm", width = 15, height = 9)
+
 
 
 

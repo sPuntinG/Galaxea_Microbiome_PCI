@@ -4,7 +4,7 @@
 # Combine results from different scripts into single
 # plots to have consistent layouts (for publication).
 #
-# Use rarefied x 1000 data!
+# Used rarefied x 1000 data!
 # 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
