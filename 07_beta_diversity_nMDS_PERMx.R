@@ -655,6 +655,11 @@ ggsave("./out/Gfas_16S/beta_diversity/rarefied1000_Bray_nMDS_ellipses_origin.png
 
 
 
+# +++++++++++++++++++++++++++++++ -------------------
+# BELOW THIS: MOVE TO DEDICATED SCRIPT! ========================================
+
+
+
 
 # PERMDISP with vegan::betadisper() ----------------------------------------------------------------------
 
