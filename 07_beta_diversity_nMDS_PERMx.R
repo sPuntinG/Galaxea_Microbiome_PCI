@@ -781,6 +781,7 @@ metadata_physeq <- data.frame(sample_data(ps_rarefied.1000avg)) # OLD ps_rarefie
 # (for later to save typing)
 distance <- dist1000_bray  # dist_bray
 
+### `state + origin + state * origin` -------------------------------------------- 
 ## Test effect of state, origine and the combination of the two:
 # distance ~ state + origin + state * origin 
 vegan::adonis2(distance ~ state + origin + state * origin, 
@@ -807,8 +808,23 @@ vegan::adonis2(distance ~ state + origin + state * origin,
 # Bacterial communities composition differ significantly based on sample ORIGIN
 
 
+### `origin` (Red Sea vs Hong Kong) -------------------------------------------- 
+## Test effect of state, origine and the combination of the two:
+# distance ~ state + origin + state * origin 
+vegan::adonis2(distance ~ origin, 
+               data = metadata_physeq, permutations = 9999) 
+
+#          Df SumOfSqs      R2      F Pr(>F)    
+# origin    1   1.4106 0.17956 5.4713  6e-04 ***
+# Residual 25   6.4454 0.82044                  
+# Total    26   7.8559 1.00000   
+
+# CONCLUSION:
+# Bacterial communities composition differ significantly based on sample ORIGIN,
+#   (in line with previous test)
 
 
+### 'state' (Symbiotic vs Bleached) -------------------------------------------- 
 ## Just out of curiosity: try PERMANOVA with only 'state' (Symbiotic vs Bleached)
 vegan::adonis2(distance ~ state, 
                data = metadata_physeq, permutations = 99999) %>% 
