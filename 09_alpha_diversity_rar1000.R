@@ -284,27 +284,33 @@ ggsave("./out/Gfas_16S/alpha_diversity/rarefied1000_alpha_div_metrics_by_state.p
 
 
 
-# PLOT C.I. 95 % of ALPHA diversities by STATE (x axis) and ORIGIN - for Supplementary --------------------------------------
+# PLOT data points and range of ALPHA diversities by STATE (x axis) and ORIGIN - for Supplementary --------------------------------------
 
 # Function to automate plotting to explore all alpha diversity indices
-alpha_CI95_plots <- function(data, y) {
+alpha_range_plots <- function(data, y) {
   y <- enquo(y)
   
   ggplot(data = data, aes(x = fct_rev(state), 
                           y = !!y )) + # log(!!y) #  sqrt(!!y)
         stat_summary(aes(
-          color = fct_reorder(colony_ms, levels_colony_ms),
-          size = fct_reorder(colony_ms, levels_colony_ms)),
-                 # fun.data = mean_cl_normal, # requires {Hmisc}!
-                 fun.data = mean_cl_boot, # requires {Hmisc}!
-                 fun.args = list(conf.int = 0.95),
+          color = fct_reorder(colony_ms, levels_colony_ms)),
+                 fun.min = min,
+                 fun.max = max,
                  geom = "errorbar",
                  position = position_dodge(width = 0.5),
-                 width = 0.5
-                 # size = 1
+                 width = 0
     ) +
+    geom_point(aes(
+      fill = fct_reorder(colony_ms, levels_colony_ms),
+      size = fct_reorder(colony_ms, levels_colony_ms)),
+      position = position_dodge(width = 0.5),
+      color = "black",
+      shape = 21
+      ) +
     scale_color_manual(values = palette_GfasMS) +
-    scale_size_manual(values = c(1.5, rep(0.7, 4)),
+    scale_fill_manual(values = palette_GfasMS,
+                      guide = "none") +
+    scale_size_manual(values = c(3, rep(1.5, 4)), # c(1.5, rep(0.7, 4)
                       guide = "none") +
     labs(color = "Colony") +
     theme_classic() +
@@ -329,16 +335,16 @@ alpha_CI95_plots <- function(data, y) {
           size = 2)))
 }
 
-alpha_CI95_plots(data = alphas, y = Faith_PD)
+alpha_range_plots(data = alphas, y = Faith_PD)
 
-obs <- alpha_CI95_plots(data = alphas, y = Observed)
-chao <- alpha_CI95_plots(data = alphas, y = Chao1) 
-piel <- alpha_CI95_plots(data = alphas, y = pielou) 
-shan <- alpha_CI95_plots(data = alphas, y = Shannon)
-simp <- alpha_CI95_plots(data = alphas, y = Simpson)  
-# invsimp <- alpha_CI95_plots(data = alphas, y = InvSimpson)
-# fish <- alpha_CI95_plots(data = alphas, y = Fisher)
-fait <- alpha_CI95_plots(data = alphas, y = Faith_PD)
+obs <- alpha_range_plots(data = alphas, y = Observed)
+chao <- alpha_range_plots(data = alphas, y = Chao1) 
+piel <- alpha_range_plots(data = alphas, y = pielou) 
+shan <- alpha_range_plots(data = alphas, y = Shannon)
+simp <- alpha_range_plots(data = alphas, y = Simpson)  
+# invsimp <- alpha_range_plots(data = alphas, y = InvSimpson)
+# fish <- alpha_range_plots(data = alphas, y = Fisher)
+fait <- alpha_range_plots(data = alphas, y = Faith_PD)
 
 library(patchwork)
 patch <- (obs + shan + simp + fait + piel) 
@@ -349,13 +355,13 @@ patch <- (obs + shan + simp + fait + piel)
   theme(legend.position = "bottom")
 
 
-ggsave("./out/Gfas_16S/alpha_diversity/rarefied1000_alphas_bystateCI95.png", 
+ggsave("./out/Gfas_16S/alpha_diversity/rarefied1000_alphas_bystateRange.png", 
        bg = "white",
        dpi = 330,
        units = "cm", width = 30, height = 13)
 
 
-ggsave("./out/Gfas_16S/alpha_diversity/rarefied1000_alphas_bystateCI95.svg", 
+ggsave("./out/Gfas_16S/alpha_diversity/rarefied1000_alphas_bystateRange.svg", 
        bg = "white",
        # dpi = 330,
        units = "cm", width = 30, height = 13)
