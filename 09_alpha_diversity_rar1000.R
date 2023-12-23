@@ -388,8 +388,10 @@ ggsave("./out/Gfas_16S/alpha_diversity/rarefied1000_alpha_MS.png",
 
 
 
-# Stat tests -----------------------
+# Stat tests - all colonies together -----------------------
 # Test difference is ALPHA diversity indexes between Symb and Bleached
+# considering all colonies together:
+# all symbiotic vs all bleached 
 
 # library("ggpubr")
 
@@ -445,7 +447,7 @@ bartlett.test(data = alphas, Faith_PD ~ state) # 0.3742
 # can do regular t-test for all but NOT SIMPSON (will need Welch test)
 
 
-# t-test ----------------------------------------------------------------------
+## t-test ----------------------------------------------------------------------
 
 # t-test is used when the population has n < 30
 
@@ -498,7 +500,7 @@ write_csv(ttests, "./out/Gfas_16S/alpha_diversity/rar1000_alphas_ttests.csv")
 # (based on the Anna Karenina Pr. (AKP) of microbial ecology)
 
 
-# Wilcoxon test (Mann-Whitney) ----------------------------------------------------------------------
+## Wilcoxon test (Mann-Whitney) ----------------------------------------------------------------------
 
 # Non-parametric 
 # necessary for Pielou, Shannon, and Simpson ...
@@ -513,12 +515,14 @@ alphas$Simpson %>% duplicated() %>% which(. == T) %>% length()
 
 # Pielou
 stats::wilcox.test(data = alphas, 
+                   paired = F,
                    pielou ~ state,
                    alternative = "greater" # W = 117, p-value = 0.1099
                    # alternative = "two.sided"
                    ) 
 
 (wcx_piel <- rstatix::wilcox_test(data = alphas, 
+                     paired = F,
                      pielou ~ state,
                      alternative = "greater" #  W = 117, p = 0.11
                      # alternative = "two.sided" #  W = 117, p = 0.22
@@ -528,6 +532,7 @@ stats::wilcox.test(data = alphas,
 
 # Shannon
 (wcx_shan <- rstatix::wilcox_test(data = alphas, 
+                                  paired = F,
                    Shannon ~ state,
                    alternative = "greater" # W = 113, p-value = 0.151
                    # alternative = "two.sided"
@@ -536,6 +541,7 @@ stats::wilcox.test(data = alphas,
 
 # Simpson
 (wcx_simp <- rstatix::wilcox_test(data = alphas, 
+                                  paired = F,
                    Simpson ~ state,
                    alternative = "greater" # W = 123, p-value = 0.0639
                    # alternative = "two.sided"
@@ -561,3 +567,153 @@ write_csv(wcxtests, "./out/Gfas_16S/alpha_diversity/rar1000_alphas_wcxtests.csv"
 
 # Note that p.value is smaller when 'alternative = "greater"' but 
 # is still always above 0.05
+
+
+
+
+# Stat tests - each colony separately -----------------------
+
+# Test difference in ALPHA diversity indexes between Symbiotic and Bleached
+# considering each individual colony separately
+# so, only comparing RS1 symbiotic vs RS1 bleached, RS2 symbiotic vs RS2 bleached ... 
+
+# Note that in this case we are comparing very small groups (n=3)
+
+# Of note, only RS1 and RS2 have n=3 for both groups (symbiotic and bleached)
+#  hence these are the only two colonies for which we can test if
+#  there is any significant diff in alpha diversity between symbiotic states
+#  (RS3, HK1, HK2 will be ignored)
+#    see this below about adequate replication per group:
+alphas %>% 
+  group_by(colony_ms, state) %>% 
+  summarise(n = n_distinct(sample_id)) 
+
+
+
+## Check distribution (normality) ----------------------
+
+shapiro.test(alphas$Observed) %>% 
+  broom::tidy()
+
+alphas %>% 
+  filter(colony_ms == "RS1" | colony_ms == "RS2") %>%
+  nest(data = -colony_ms) %>% 
+  mutate(test = map(data, 
+                    ~ broom::tidy(shapiro.test(.x$Observed)))) %>% 
+  unnest(test) # %>% view()
+
+
+# Wrap in function
+
+nestest_shapiro <- function(data, a) {
+  a <- enquo(a)
+  
+  data %>% 
+    filter(colony_ms == "RS1" | colony_ms == "RS2") %>%
+    nest(data = -c(colony_ms, state)) %>% 
+    mutate(test = map(data, function(.x) {
+      broom::tidy(shapiro.test(.x[[quo_name(a)]]))
+    })) %>% 
+    unnest(test)
+}
+
+# Test function: it works :)
+nestest_shapiro(data = alphas, a = Observed)
+
+
+# Now iterate with purrr::map()
+a_values <- c("Observed", "Shannon", "Simpson", "pielou", "Faith_PD")  
+
+result_list_shapiro <- purrr::map(a_values, 
+                                  ~ nestest_shapiro(data = alphas, a = !!sym(.)))
+
+
+# Bind all together in one tibble
+result_table_shapiro <- bind_rows(result_list_shapiro)
+
+# Improve table readability
+result_table_shapiro %>% 
+  mutate(significance = case_when(
+    p.value < 0.001 ~ "***",
+    p.value < 0.01 ~ "**",
+    p.value < 0.05 ~ "*",
+    p.value == 0.05 ~ ".")) %>%
+  mutate(alpha_index = rep(a_values, 4)) %>%
+  arrange(colony_ms, desc(state)) %>% 
+  select(colony_ms, state, alpha_index, everything()) %>% 
+  filter(p.value < 0.05) %>% # to see when non-normal
+  view()
+  
+# Non-normality only in 2 cases:
+#  - RS2 bleached Faith_PD 
+#  - RS2 bleached Shannon
+
+# At least for RS1 (which is what I am interested in) I can just use 
+#  unpaired Welch test 
+
+
+
+
+## Welch test (t-test for unequal variance) -----------
+
+# From plots: quite clear that we have unequal variance in several cases, no need to test
+
+# Welch test across all colonies 
+#  (only 2 in this case but still I don't want to copy paste ... )
+alphas %>% 
+  filter(colony_ms == "RS1" | colony_ms == "RS2") %>%
+  nest(data = -colony_ms) %>% 
+  mutate(test = map(.x = data, 
+                    ~rstatix::t_test(Observed~state, 
+                                     data = .x,
+                                     alternative = "two.sided",
+                                     paired = F,
+                                     var.equal = F) )) %>% 
+  unnest(test) #%>% view()
+
+
+# Wrap in function
+
+nestest_welch <- function(data, y) {
+  y <- enquo(y)
+  
+  data %>% 
+    filter(colony_ms == "RS1" | colony_ms == "RS2") %>%
+    nest(data = -colony_ms) %>% 
+    mutate(test = map(data, function(.x) {
+      formula <- reformulate("state", response = quo_name(y)) # Note: cannot use directly `!!y~state`
+      rstatix::t_test(formula, 
+                      data = .x, 
+                      alternative = "two.sided", 
+                      paired = FALSE, 
+                      var.equal = FALSE) # Welch's test
+    })) %>% 
+    unnest(test)
+}
+
+# Test function: it works :)
+nestest_welch(data = alphas, y = Observed)
+
+
+# Now iterate with purrr::map()
+y_values <- c("Observed", "Shannon", "Simpson", "pielou", "Faith_PD")  
+
+result_list_welch <- map(y_values, ~ nestest_welch(data = alphas, y = !!sym(.)))
+
+
+# Bind all together in one tibble
+result_table_welch <- bind_rows(result_list_welch)
+
+# Improve table readability
+result_table_welch <- result_table_welch %>% 
+  mutate(significance = case_when(
+    p < 0.001 ~ "***",
+    p < 0.01 ~ "**",
+    p < 0.05 ~ "*",
+    p == 0.05 ~ ".")) %>%
+  arrange(colony_ms) #%>% view()
+
+# Export table
+write_csv(result_table_welch, "./out/Gfas_16S/alpha_diversity/rar1000_alphas_RS1RS2_welch.csv")
+
+

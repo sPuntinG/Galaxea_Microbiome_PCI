@@ -29,12 +29,12 @@
      inkscape:bbox-paths="true"
      inkscape:bbox-nodes="true"
      inkscape:zoom="1.1871666"
-     inkscape:cx="331.88265"
-     inkscape:cy="254.38721"
+     inkscape:cx="325.14392"
+     inkscape:cy="186.5787"
      inkscape:window-width="1920"
-     inkscape:window-height="986"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg5149"
      inkscape:snap-object-midpoints="true"
@@ -58,13 +58,6 @@
     }
   ]]></style>
   </defs>
-  <rect
-     width="100%"
-     height="100%"
-     style="fill:#00ffff;stroke:none"
-     id="rect6"
-     x="-21.059908"
-     y="519.19733" />
   <defs
      id="defs11">
     <clipPath
@@ -77,10 +70,6 @@
          id="rect8" />
     </clipPath>
   </defs>
-  <g
-     clip-path="url(#cpMC4wMHw1OTUuMjh8MC4wMHwzMTEuODE=)"
-     id="g13"
-     transform="translate(-20.415001,0.53500003)" />
   <defs
      id="defs18">
     <clipPath
@@ -93,10 +82,6 @@
          id="rect15" />
     </clipPath>
   </defs>
-  <g
-     clip-path="url(#cpMC4wMHw1OTUuMjh8MC4wMHwzMTEuODE=)"
-     id="g24"
-     transform="translate(-20.415001,0.53500003)" />
   <defs
      id="defs29">
     <clipPath
@@ -109,10 +94,6 @@
          id="rect26" />
     </clipPath>
   </defs>
-  <g
-     clip-path="url(#cpMC4wMHw1OTUuMjh8MC4wMHwzMTEuODE=)"
-     id="g35"
-     transform="translate(-20.415001,0.53500003)" />
   <defs
      id="defs40">
     <clipPath
@@ -137,10 +118,6 @@
          id="rect158" />
     </clipPath>
   </defs>
-  <g
-     clip-path="url(#cpMC4wMHw1OTUuMjh8MC4wMHwzMTEuODE=)"
-     id="g167"
-     transform="translate(-20.415001,0.53500003)" />
   <defs
      id="defs172">
     <clipPath
@@ -165,10 +142,6 @@
          id="rect288" />
     </clipPath>
   </defs>
-  <g
-     clip-path="url(#cpMC4wMHw1OTUuMjh8MC4wMHwzMTEuODE=)"
-     id="g297"
-     transform="translate(-20.415001,0.53500003)" />
   <defs
      id="defs302">
     <clipPath
@@ -193,10 +166,6 @@
          id="rect422" />
     </clipPath>
   </defs>
-  <g
-     clip-path="url(#cpMC4wMHw1OTUuMjh8MC4wMHwzMTEuODE=)"
-     id="g431"
-     transform="translate(-20.415001,0.53500003)" />
   <defs
      id="defs436">
     <clipPath
@@ -221,6 +190,61 @@
          id="rect4866" />
     </clipPath>
   </defs>
+  <defs
+     id="defs4970">
+    <clipPath
+       id="cpMjM0LjM1fDM1NS4xNXwyODMuODR8MzExLjgx">
+      <rect
+         x="234.35001"
+         y="283.84"
+         width="120.8"
+         height="27.969999"
+         id="rect4967" />
+    </clipPath>
+  </defs>
+  <defs
+     id="defs5023">
+    <clipPath
+       id="cpMzY2LjExfDU4Mi4xNXwyODMuODR8MzExLjgx">
+      <rect
+         x="366.10999"
+         y="283.84"
+         width="216.03999"
+         height="27.969999"
+         id="rect5020" />
+    </clipPath>
+  </defs>
+  <rect
+     width="100%"
+     height="100%"
+     style="fill:#00ffff;stroke:none"
+     id="rect6"
+     x="-21.059908"
+     y="519.19733" />
+  <g
+     clip-path="url(#cpMC4wMHw1OTUuMjh8MC4wMHwzMTEuODE=)"
+     id="g13"
+     transform="translate(-20.415001,0.53500003)" />
+  <g
+     clip-path="url(#cpMC4wMHw1OTUuMjh8MC4wMHwzMTEuODE=)"
+     id="g24"
+     transform="translate(-20.415001,0.53500003)" />
+  <g
+     clip-path="url(#cpMC4wMHw1OTUuMjh8MC4wMHwzMTEuODE=)"
+     id="g35"
+     transform="translate(-20.415001,0.53500003)" />
+  <g
+     clip-path="url(#cpMC4wMHw1OTUuMjh8MC4wMHwzMTEuODE=)"
+     id="g167"
+     transform="translate(-20.415001,0.53500003)" />
+  <g
+     clip-path="url(#cpMC4wMHw1OTUuMjh8MC4wMHwzMTEuODE=)"
+     id="g297"
+     transform="translate(-20.415001,0.53500003)" />
+  <g
+     clip-path="url(#cpMC4wMHw1OTUuMjh8MC4wMHwzMTEuODE=)"
+     id="g431"
+     transform="translate(-20.415001,0.53500003)" />
   <g
      clip-path="url(#cpMzkuMDN8MjIzLjM5fDI4My44NHwzMTEuODE=)"
      id="g4871"
@@ -317,18 +341,6 @@
      clip-path="url(#cpMC4wMHw1OTUuMjh8MC4wMHwzMTEuODE=)"
      id="g4965"
      transform="translate(-20.415001,0.53500003)" />
-  <defs
-     id="defs4970">
-    <clipPath
-       id="cpMjM0LjM1fDM1NS4xNXwyODMuODR8MzExLjgx">
-      <rect
-         x="234.35001"
-         y="283.84"
-         width="120.8"
-         height="27.969999"
-         id="rect4967" />
-    </clipPath>
-  </defs>
   <g
      clip-path="url(#cpMjM0LjM1fDM1NS4xNXwyODMuODR8MzExLjgx)"
      id="g4972"
@@ -377,18 +389,6 @@
      clip-path="url(#cpMC4wMHw1OTUuMjh8MC4wMHwzMTEuODE=)"
      id="g5018"
      transform="translate(-20.415001,0.53500003)" />
-  <defs
-     id="defs5023">
-    <clipPath
-       id="cpMzY2LjExfDU4Mi4xNXwyODMuODR8MzExLjgx">
-      <rect
-         x="366.10999"
-         y="283.84"
-         width="216.03999"
-         height="27.969999"
-         id="rect5020" />
-    </clipPath>
-  </defs>
   <g
      clip-path="url(#cpMzY2LjExfDU4Mi4xNXwyODMuODR8MzExLjgx)"
      id="g5025"
@@ -884,8 +884,8 @@
   <g
      id="g17252" />
   <g
-     id="g18380"
-     inkscape:export-filename="C:\Users\Dell\Documents\GitHub\Gfas_16S\Unified\out\Gfas_16S\alpha_diversity\Fig1_20230505.png"
+     id="g13775"
+     inkscape:export-filename="C:\Users\Dell\Documents\GitHub\Galaxea_Microbiome\out\Gfas_16S\alpha_diversity\Fig1_20230505.png"
      inkscape:export-xdpi="330"
      inkscape:export-ydpi="330">
     <rect
@@ -1611,231 +1611,233 @@
        style="fill:#ffffff;stroke:#ffffff;stroke-width:1.07"
        id="rect293" />
     <g
-       id="g10778"
-       transform="translate(-23.415001,0.53500003)">
+       id="g6051">
       <rect
-         x="253.81"
-         y="25.879999"
+         x="230.39499"
+         y="26.414999"
          width="67.080002"
          height="201.24001"
          style="fill:#ffffff;stroke:none;stroke-width:1.07"
          id="rect304" />
       <line
-         x1="302.60001"
-         y1="47.650002"
-         x2="302.60001"
-         y2="35.02"
+         x1="279.185"
+         y1="48.185001"
+         x2="279.185"
+         y2="35.555"
          style="stroke:#545454;stroke-width:1.07;stroke-linecap:butt"
          id="line306" />
       <line
-         x1="302.60001"
-         y1="71.370003"
-         x2="302.60001"
-         y2="90.010002"
+         x1="279.185"
+         y1="71.905006"
+         x2="279.185"
+         y2="90.545006"
          style="stroke:#545454;stroke-width:1.07;stroke-linecap:butt"
          id="line308" />
       <polygon
-         points="308.7,71.37 308.7,47.65 296.5,47.65 296.5,71.37 "
+         points="296.5,47.65 296.5,71.37 308.7,71.37 308.7,47.65 "
          style="fill:#ffffff;stroke:#545454;stroke-width:1.07"
-         id="polygon310" />
+         id="polygon310"
+         transform="translate(-23.415001,0.53500003)" />
       <line
-         x1="296.5"
-         y1="58.310001"
-         x2="308.70001"
-         y2="58.310001"
+         x1="273.08499"
+         y1="58.845001"
+         x2="285.285"
+         y2="58.845001"
          style="stroke:#545454;stroke-width:2.13;stroke-linecap:butt"
          id="line312" />
       <line
-         x1="272.10999"
-         y1="55.790001"
-         x2="272.10999"
-         y2="42.200001"
+         x1="248.69498"
+         y1="56.325001"
+         x2="248.69498"
+         y2="42.735001"
          style="stroke:#545454;stroke-width:1.07;stroke-linecap:butt"
          id="line314" />
       <line
-         x1="272.10999"
-         y1="85.690002"
-         x2="272.10999"
-         y2="85.690002"
+         x1="248.69498"
+         y1="86.225006"
+         x2="248.69498"
+         y2="86.225006"
          style="stroke:#545454;stroke-width:1.07;stroke-linecap:butt"
          id="line316" />
       <polygon
-         points="278.21,85.69 278.21,55.79 266.01,55.79 266.01,85.69 "
+         points="266.01,55.79 266.01,85.69 278.21,85.69 278.21,55.79 "
          style="fill:#ffffff;stroke:#545454;stroke-width:1.07"
-         id="polygon318" />
+         id="polygon318"
+         transform="translate(-23.415001,0.53500003)" />
       <line
-         x1="266.01001"
-         y1="66.25"
-         x2="278.20999"
-         y2="66.25"
+         x1="242.595"
+         y1="66.785004"
+         x2="254.79498"
+         y2="66.785004"
          style="stroke:#545454;stroke-width:2.13;stroke-linecap:butt"
          id="line320" />
       <circle
-         cx="302.60001"
-         cy="180.39"
+         cx="279.185"
+         cy="180.925"
          r="2.52"
          style="stroke:#ef4719;stroke-width:1.84"
          id="circle322" />
       <circle
-         cx="300.37"
-         cy="73.139999"
+         cx="276.95499"
+         cy="73.675003"
          r="2.52"
          style="stroke:#ef4719;stroke-width:1.84"
          id="circle324" />
       <circle
-         cx="306.31"
-         cy="64.32"
+         cx="282.89499"
+         cy="64.855003"
          r="2.52"
          style="stroke:#ef4719;stroke-width:1.84"
          id="circle326" />
       <circle
-         cx="297.85001"
-         cy="52.299999"
+         cx="274.435"
+         cy="52.834999"
          r="2.52"
          style="stroke:#f5a413;stroke-width:1.84"
          id="circle328" />
       <circle
-         cx="306.25"
-         cy="47.119999"
+         cx="282.83499"
+         cy="47.654999"
          r="2.52"
          style="stroke:#f5a413;stroke-width:1.84"
          id="circle330" />
       <circle
-         cx="303.70001"
-         cy="82.050003"
+         cx="280.285"
+         cy="82.585007"
          r="2.52"
          style="stroke:#f5a413;stroke-width:1.84"
          id="circle332" />
       <circle
-         cx="302.14999"
-         cy="35.02"
+         cx="278.73499"
+         cy="35.555"
          r="2.52"
          style="stroke:#a50021;stroke-width:1.84"
          id="circle334" />
       <circle
-         cx="304.39001"
-         cy="39.150002"
+         cx="280.97501"
+         cy="39.685001"
          r="2.52"
          style="stroke:#a50021;stroke-width:1.84"
          id="circle336" />
       <circle
-         cx="303.88"
-         cy="66.040001"
+         cx="280.465"
+         cy="66.575005"
          r="2.52"
          style="stroke:#a50021;stroke-width:1.84"
          id="circle338" />
       <circle
-         cx="303.32001"
-         cy="51.330002"
+         cx="279.905"
+         cy="51.865002"
          r="2.52"
          style="stroke:#15aef3;stroke-width:1.84"
          id="circle340" />
       <circle
-         cx="299.54999"
-         cy="40.16"
+         cx="276.13498"
+         cy="40.695"
          r="2.52"
          style="stroke:#15aef3;stroke-width:1.84"
          id="circle342" />
       <circle
-         cx="300.31"
-         cy="49.220001"
+         cx="276.89499"
+         cy="49.755001"
          r="2.52"
          style="stroke:#15aef3;stroke-width:1.84"
          id="circle344" />
       <circle
-         cx="270.03"
-         cy="55.790001"
+         cx="246.61499"
+         cy="56.325001"
          r="3.0599999"
          style="fill:#15aef3;stroke:none;stroke-width:1.84"
          id="circle346" />
       <circle
-         cx="269.17001"
-         cy="49.959999"
+         cx="245.755"
+         cy="50.494999"
          r="3.0599999"
          style="fill:#15aef3;stroke:none;stroke-width:1.84"
          id="circle348" />
       <circle
-         cx="301.32999"
-         cy="65.18"
+         cx="277.91498"
+         cy="65.715004"
          r="2.52"
          style="stroke:#3632d6;stroke-width:1.84"
          id="circle350" />
       <circle
-         cx="301.63"
-         cy="90.010002"
+         cx="278.215"
+         cy="90.545006"
          r="2.52"
          style="stroke:#3632d6;stroke-width:1.84"
          id="circle352" />
       <circle
-         cx="270.76001"
-         cy="66.970001"
+         cx="247.345"
+         cy="67.505005"
          r="3.0599999"
          style="fill:#3632d6;stroke:none;stroke-width:1.84"
          id="circle354" />
       <circle
-         cx="272.81"
-         cy="83.230003"
+         cx="249.39499"
+         cy="83.765007"
          r="3.0599999"
          style="fill:#3632d6;stroke:none;stroke-width:1.84"
          id="circle356" />
       <circle
-         cx="267"
-         cy="65.309998"
+         cx="243.58499"
+         cy="65.845001"
          r="3.0599999"
          style="fill:#3632d6;stroke:none;stroke-width:1.84"
          id="circle358" />
       <circle
-         cx="270.04001"
-         cy="85.690002"
+         cx="246.625"
+         cy="86.225006"
          r="3.0599999"
          style="fill:#ef4719;stroke:none;stroke-width:1.84"
          id="circle360" />
       <circle
-         cx="276.32001"
-         cy="66.25"
+         cx="252.905"
+         cy="66.785004"
          r="3.0599999"
          style="fill:#ef4719;stroke:none;stroke-width:1.84"
          id="circle362" />
       <circle
-         cx="275.26001"
-         cy="51.709999"
+         cx="251.845"
+         cy="52.244999"
          r="3.0599999"
          style="fill:#ef4719;stroke:none;stroke-width:1.84"
          id="circle364" />
       <circle
-         cx="273.70001"
-         cy="207.78999"
+         cx="250.285"
+         cy="208.325"
          r="3.0599999"
          style="fill:#f5a413;stroke:none;stroke-width:1.84"
          id="circle366" />
       <circle
-         cx="272.10999"
-         cy="217.97"
+         cx="248.69498"
+         cy="218.505"
          r="3.0599999"
          style="fill:#f5a413;stroke:none;stroke-width:1.84"
          id="circle368" />
       <circle
-         cx="270.48999"
-         cy="208.42"
+         cx="247.07498"
+         cy="208.955"
          r="3.0599999"
          style="fill:#f5a413;stroke:none;stroke-width:1.84"
          id="circle370" />
       <circle
-         cx="272.85999"
-         cy="60.650002"
+         cx="249.44498"
+         cy="61.185001"
          r="3.0599999"
          style="fill:#a50021;stroke:none;stroke-width:1.84"
          id="circle372" />
       <circle
-         cx="273.07001"
-         cy="42.200001"
+         cx="249.655"
+         cy="42.735001"
          r="3.0599999"
          style="fill:#a50021;stroke:none;stroke-width:1.84"
          id="circle374" />
       <polyline
          points="253.81,227.12 253.81,25.88 "
          style="stroke-width:1.07;stroke-linecap:butt"
-         id="polyline378" />
+         id="polyline378"
+         transform="translate(-23.415001,0.53500003)" />
       <text
          x="248.88"
          y="214.03999"
@@ -1843,7 +1845,8 @@
          style="font-size:8px;font-family:Arial;fill:#4d4d4d"
          textLength="11.12"
          lengthAdjust="spacingAndGlyphs"
-         id="text380">0.6</text>
+         id="text380"
+         transform="translate(-23.415001,0.53500003)">0.6</text>
       <text
          x="248.88"
          y="166.39999"
@@ -1851,7 +1854,8 @@
          style="font-size:8px;font-family:Arial;fill:#4d4d4d"
          textLength="11.12"
          lengthAdjust="spacingAndGlyphs"
-         id="text382">0.7</text>
+         id="text382"
+         transform="translate(-23.415001,0.53500003)">0.7</text>
       <text
          x="248.88"
          y="118.76"
@@ -1859,7 +1863,8 @@
          style="font-size:8px;font-family:Arial;fill:#4d4d4d"
          textLength="11.12"
          lengthAdjust="spacingAndGlyphs"
-         id="text384">0.8</text>
+         id="text384"
+         transform="translate(-23.415001,0.53500003)">0.8</text>
       <text
          x="248.88"
          y="71.120003"
@@ -1867,51 +1872,63 @@
          style="font-size:8px;font-family:Arial;fill:#4d4d4d"
          textLength="11.12"
          lengthAdjust="spacingAndGlyphs"
-         id="text386">0.9</text>
+         id="text386"
+         transform="translate(-23.415001,0.53500003)">0.9</text>
       <polyline
          points="251.08,211.17 253.81,211.17 "
          style="stroke:#333333;stroke-width:1.07;stroke-linecap:butt"
-         id="polyline388" />
+         id="polyline388"
+         transform="translate(-23.415001,0.53500003)" />
       <polyline
          points="251.08,163.53 253.81,163.53 "
          style="stroke:#333333;stroke-width:1.07;stroke-linecap:butt"
-         id="polyline390" />
+         id="polyline390"
+         transform="translate(-23.415001,0.53500003)" />
       <polyline
          points="251.08,115.90 253.81,115.90 "
          style="stroke:#333333;stroke-width:1.07;stroke-linecap:butt"
-         id="polyline392" />
+         id="polyline392"
+         transform="translate(-23.415001,0.53500003)" />
       <polyline
          points="251.08,68.26 253.81,68.26 "
          style="stroke:#333333;stroke-width:1.07;stroke-linecap:butt"
-         id="polyline394" />
+         id="polyline394"
+         transform="translate(-23.415001,0.53500003)" />
       <text
-         transform="rotate(-90,179.815,-53.315)"
+         transform="rotate(-90,168.375,-41.339999)"
          text-anchor="middle"
-         style="font-size:9px;font-family:Arial"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;white-space:pre"
          textLength="76.029999"
          lengthAdjust="spacingAndGlyphs"
-         id="text396">Simpson evenness</text>
+         id="text396"><tspan
+           sodipodi:role="line"
+           id="tspan5992"
+           x="3.8146973e-06"
+           y="0">Simpson diversity</tspan></text>
       <polyline
          points="253.81,227.12 320.89,227.12 "
          style="stroke-width:1.07;stroke-linecap:butt"
-         id="polyline398" />
+         id="polyline398"
+         transform="translate(-23.415001,0.53500003)" />
       <polyline
          points="272.11,229.86 272.11,227.12 "
          style="stroke:#333333;stroke-width:1.07;stroke-linecap:butt"
-         id="polyline400" />
+         id="polyline400"
+         transform="translate(-23.415001,0.53500003)" />
       <polyline
          points="302.60,229.86 302.60,227.12 "
          style="stroke:#333333;stroke-width:1.07;stroke-linecap:butt"
-         id="polyline402" />
+         id="polyline402"
+         transform="translate(-23.415001,0.53500003)" />
       <text
-         transform="rotate(-45,423.07791,-215.30461)"
+         transform="rotate(-45,412.01621,-186.7727)"
          text-anchor="end"
          style="font-size:8px;font-family:Arial;fill:#4d4d4d"
          textLength="34.68"
          lengthAdjust="spacingAndGlyphs"
          id="text404">Symbiotic</text>
       <text
-         transform="rotate(-45,438.32291,-252.10929)"
+         transform="rotate(-45,427.26121,-223.57738)"
          text-anchor="end"
          style="font-size:8px;font-family:Arial;fill:#4d4d4d"
          textLength="33.360001"
@@ -1923,35 +1940,40 @@
          style="font-size:6px;font-family:Arial"
          textLength="38.650002"
          lengthAdjust="spacingAndGlyphs"
-         id="text408">Mann-Whitney</text>
+         id="text408"
+         transform="translate(-23.415001,0.53500003)">Mann-Whitney</text>
       <text
          x="294.13"
          y="13.56"
          style="font-size:6px;font-family:Arial"
          textLength="15.99"
          lengthAdjust="spacingAndGlyphs"
-         id="text410">U-test</text>
+         id="text410"
+         transform="translate(-23.415001,0.53500003)">U-test</text>
       <text
          x="253.81"
          y="19.129999"
          style="font-style:italic;font-size:6px;font-family:Arial"
          textLength="4"
          lengthAdjust="spacingAndGlyphs"
-         id="text412">P</text>
+         id="text412"
+         transform="translate(-23.415001,0.53500003)">P</text>
       <text
          x="259.48001"
          y="19.129999"
          style="font-size:6px;font-family:Arial"
          textLength="3.5"
          lengthAdjust="spacingAndGlyphs"
-         id="text414">=</text>
+         id="text414"
+         transform="translate(-23.415001,0.53500003)">=</text>
       <text
          x="264.64001"
          y="19.129999"
          style="font-size:6px;font-family:Arial"
          textLength="15"
          lengthAdjust="spacingAndGlyphs"
-         id="text416">0.151</text>
+         id="text416"
+         transform="translate(-23.415001,0.53500003)">0.151</text>
     </g>
     <g
        id="g19013"
@@ -15419,10 +15441,11 @@
        id="text284"
        transform="translate(205.25533,8.8349612)">B</text>
     <g
-       id="g5968">
+       id="g11317"
+       transform="translate(-0.01179603)">
       <g
          id="g19247"
-         transform="translate(3.1966886,-77.264245)">
+         transform="translate(-4.5933382,-77.264245)">
         <g
            clip-path="url(#cpMC4wMHw1OTUuMjh8MC4wMHwzMTEuODE=)"
            id="g19055"
@@ -15498,9 +15521,6 @@
              id="text19097">Red Sea bleached</text>
         </g>
       </g>
-    </g>
-    <g
-       id="g5985">
       <g
          id="g19264"
          transform="translate(-89.560822,-97.721437)">
@@ -15546,7 +15566,7 @@
       </g>
       <g
          id="g19272"
-         transform="translate(-3.311209,-106.23142)">
+         transform="translate(-3.3112088,-106.23142)">
         <g
            clip-path="url(#cpMC4wMHw1OTUuMjh8MC4wMHwzMTEuODE=)"
            id="g19079"
@@ -15586,7 +15606,7 @@
     </g>
     <g
        id="g19159"
-       transform="translate(-103.30531,-58.676126)">
+       transform="translate(-103.31711,-58.676126)">
       <g
          clip-path="url(#cpMC4wMHw1OTUuMjh8MC4wMHwzMTEuODE=)"
          id="g19087"
