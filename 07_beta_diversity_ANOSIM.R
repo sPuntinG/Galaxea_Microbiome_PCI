@@ -5,7 +5,9 @@
 # 
 #   Why:
 #   Test if Red Sea and Hong Kong are significantly different 
-#   (they are with PERMANOVA, so try with ANOSIM as suggested by reviewer)
+#   (they are with PERMANOVA)
+# 
+#   This analysis was added during peer-review process as suggested by reviewer
 #
 ######################################################
 
@@ -88,9 +90,7 @@ ANOSIM_origin <- vegan::anosim(x = for_anosim, grouping = ASV_table_meta$origin,
 ANOSIM_origin
 # ANOSIM statistic R: 0.2015 
 # Significance: 0.0186 *
-# 
-# Permutation: free # IS THIS IMPORTANT??? CAN I CHANGE IT???
-# Number of permutations: 9999
+
 
 summary(ANOSIM_origin)
 # Upper quantiles of permutations (null model):
@@ -117,11 +117,5 @@ dev.off()
 #    individual groups (here "HKU" and "JLU")
 # - NOT meaningful to compare groups with each other (e.g. cannot directly compare "HKU" vs "JLU")
 # - notch = 95 % CI around the median. If no overlap = significant difference
-
-# RESULTS:
-#  Significant diff. (no overlap in 95%CI) for Between-HKU, but NOT for Between-JLU,
-#  meaning that the distances between groups (JLU-HKU) 
-#  are greater than within HKU samples (polyps)
-#  but not greater than within JLU samples (polyps)
 
 

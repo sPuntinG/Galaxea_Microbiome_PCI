@@ -581,9 +581,9 @@ write_csv(wcxtests, "./out/Gfas_16S/alpha_diversity/rar1000_alphas_wcxtests.csv"
 
 # Of note, only RS1 and RS2 have n=3 for both groups (symbiotic and bleached)
 #  hence these are the only two colonies for which we can test if
-#  there is any significant diff in alpha diversity between symbiotic states
-#  (RS3, HK1, HK2 will be ignored)
-#    see this below about adequate replication per group:
+#  there is any significant difference in alpha diversity between symbiotic states
+#  (hence RS3, HK1, HK2 will be ignored)
+#    see here below where adequate replication per group:
 alphas %>% 
   group_by(colony_ms, state) %>% 
   summarise(n = n_distinct(sample_id)) 
@@ -644,14 +644,6 @@ result_table_shapiro %>%
   filter(p.value < 0.05) %>% # to see when non-normal
   view()
   
-# Non-normality only in 2 cases:
-#  - RS2 bleached Faith_PD 
-#  - RS2 bleached Shannon
-
-# At least for RS1 (which is what I am interested in) I can just use 
-#  unpaired Welch test 
-
-
 
 
 ## Welch test (t-test for unequal variance) -----------
