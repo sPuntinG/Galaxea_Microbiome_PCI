@@ -227,9 +227,10 @@ biom convert \
 -i $fp_forR/extracted_table/data/feature-table.biom \
 -o $fp_forR/feature-table.tsv --to-tsv
   
-### Download these 3 files and import in R (see script XXXXXXXX)
+### Download these 3 files and import in R 
+# Currently stored in ~/in/q2_outputs/for_phyloseq
 # Of note: for ease of typing the files were renamed as follows
-# table-filtered-decont-rmC1.qza -> table-filtered-decont-rmC1.tsv -> feature-table.tsv
-# taxonomy-raw.qza -> taxonomy-raw.tsv -> taxonomy.tsv
-# insertion-tree.qza -> tree.nwk
+#   table-filtered-decont-rmC1.qza -> table-filtered-decont-rmC1.tsv -> feature-table.tsv
+#   taxonomy-raw.qza -> taxonomy-raw.tsv -> taxonomy.tsv
+#   insertion-tree.qza -> tree.nwk
 
